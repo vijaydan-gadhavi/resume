@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vijaydan Gadhavi – PMO Lead | AI Program Manager | Delivery Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+/* ── Reset ─────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B2545;--navy2:#13315C;--teal:#0077B6;--teal2:#0096C7;
+  --teal-bg:#E8F5FC;--teal-bdr:#B3D9EE;--accent:#E76F51;--accent-bg:#FEF0EB;
+  --dark:#1A1A2E;--g1:#2C3E50;--g2:#4A5568;--g3:#718096;--g4:#A0AEC0;
+  --g5:#E2E8F0;--g6:#F7F9FC;--white:#fff;
+  --sh-sm:0 1px 3px rgba(0,0,0,.07),0 1px 2px rgba(0,0,0,.04);
+  --sh-md:0 4px 16px rgba(11,37,69,.10);
+  --sh-lg:0 10px 48px rgba(11,37,69,.16);
+  --r:8px;--font:'DM Sans',sans-serif;--serif:'DM Serif Display',serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#DCE7F5;color:var(--g1);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+
+/* ── Page Wrapper ──────────────────────────────────────────── */
+.resume{max-width:980px;margin:28px auto;background:var(--white);border-radius:var(--r);box-shadow:var(--sh-lg);overflow:hidden}
+
+/* ── Print Button ──────────────────────────────────────────── */
+.print-btn{
+  position:fixed;top:18px;right:18px;z-index:200;
+  background:var(--navy2);color:var(--white);border:none;
+  padding:10px 20px;border-radius:24px;font-family:var(--font);
+  font-size:13px;font-weight:600;cursor:pointer;
+  box-shadow:var(--sh-md);display:flex;align-items:center;gap:7px;
+  transition:background .2s,transform .15s;
+}
+.print-btn:hover{background:var(--teal);transform:translateY(-2px)}
+.print-btn svg{width:14px;height:14px;flex-shrink:0}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+.header{
+  background:linear-gradient(135deg, var(--navy) 0%, var(--navy2) 55%, #1A4A8F 100%);
+  padding:36px 44px 30px;position:relative;overflow:hidden;
+}
+.header::before{
+  content:'';position:absolute;top:-50px;right:-50px;
+  width:260px;height:260px;border-radius:50%;
+  background:rgba(0,150,199,.14);pointer-events:none;
+}
+.header::after{
+  content:'';position:absolute;bottom:-30px;right:200px;
+  width:140px;height:140px;border-radius:50%;
+  background:rgba(231,111,81,.10);pointer-events:none;
+}
+.header-accent{position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(to bottom,var(--teal2),var(--accent))}
+.header-inner{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px}
+.header-left{flex:1;min-width:260px}
+
+/* Photo */
+.photo-wrap{flex-shrink:0;position:relative;margin-right:8px}
+.photo-wrap img{
+  width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;
+  border:3px solid var(--white);
+  box-shadow:0 0 0 3px var(--teal2),0 4px 20px rgba(0,0,0,.3);
+  display:block;
+}
+
+.name{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.5rem);color:var(--white);line-height:1.1;letter-spacing:.3px;margin-bottom:7px}
+.title-badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:9px}
+.title-badge{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);color:#B8D9F5;font-size:11px;font-weight:600;padding:3px 11px;border-radius:20px;letter-spacing:.3px}
+.tagline{color:rgba(255,255,255,.58);font-size:12px;font-weight:400;margin-bottom:16px}
+.contact-grid{display:flex;flex-wrap:wrap;gap:7px 18px}
+.contact-item{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.82);font-size:12px}
+.contact-item-href{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.82);font-size:12px}
+.ci-icon{display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:rgba(0,150,199,.28);flex-shrink:0;font-size:10px}
+.header-stats{display:flex;flex-direction:column;gap:7px;align-self:flex-start}
+.stat-pill{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:9px 14px;text-align:center;min-width:106px}
+.stat-num{display:block;font-family:var(--serif);font-size:1.65rem;color:var(--white);line-height:1;margin-bottom:2px}
+.stat-lbl{font-size:9.5px;color:rgba(255,255,255,.58);font-weight:500;text-transform:uppercase;letter-spacing:.8px}
+
+/* ── LAYOUT ─────────────────────────────────────────────────── */
+.layout{display:grid;grid-template-columns:238px 1fr}
+
+/* ── SIDEBAR ─────────────────────────────────────────────────── */
+.sidebar{background:var(--g6);border-right:1px solid var(--g5);padding:26px 17px}
+.sb-sec{margin-bottom:20px}
+.sb-title{
+  font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--teal);margin-bottom:10px;padding-bottom:5px;
+  border-bottom:2px solid var(--teal-bdr);
+  display:flex;align-items:center;gap:5px;
+}
+.sb-title::before{content:'';width:3px;height:11px;background:var(--teal);border-radius:2px;flex-shrink:0}
+
+/* Skills */
+.skill-grp{margin-bottom:10px}
+.skill-cat{font-size:11px;font-weight:700;color:var(--navy2);margin-bottom:5px}
+.tags{display:flex;flex-wrap:wrap;gap:3px}
+.tag{font-size:10px;padding:2px 7px;border-radius:4px;line-height:1.6}
+.tag-s{background:var(--navy2);color:var(--white);border:1px solid var(--navy2);font-weight:500}
+.tag-t{background:var(--teal-bg);color:var(--teal);border:1px solid var(--teal-bdr);font-weight:500}
+.tag-o{background:var(--white);border:1px solid var(--g5);color:var(--g2)}
+
+/* AI pills */
+.ai-pills{display:flex;flex-wrap:wrap;gap:4px}
+.ai-pill{background:linear-gradient(135deg,var(--navy2),var(--teal));color:var(--white);font-size:9.5px;padding:3px 8px;border-radius:12px;font-weight:600}
+
+/* Cert */
+.cert-item{display:flex;gap:8px;margin-bottom:8px;align-items:flex-start}
+.cert-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:4px}
+.cert-dot.p{background:var(--accent)}
+.cert-name{font-size:10.5px;font-weight:700;color:var(--navy2);line-height:1.3}
+.cert-iss{font-size:9.5px;color:var(--g3);margin-top:1px}
+
+/* Edu */
+.edu-it{margin-bottom:10px}
+.edu-deg{font-size:10.5px;font-weight:700;color:var(--navy2);line-height:1.35}
+.edu-uni{font-size:10px;color:var(--teal);font-weight:500;margin-top:1px}
+.edu-yr{font-size:9.5px;color:var(--g3);margin-top:1px}
+
+/* Lang */
+.lang-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.lang-name{font-size:11px;font-weight:600;color:var(--navy2)}
+.lang-badge{font-size:9px;background:var(--teal-bg);color:var(--teal);padding:1px 7px;border-radius:8px;font-weight:600}
+
+/* Ref */
+.ref-card{background:var(--teal-bg);border:1px solid var(--teal-bdr);border-radius:var(--r);padding:11px}
+.ref-name{font-weight:700;color:var(--navy2);font-size:12px}
+.ref-role{color:var(--teal);font-size:11px;margin-top:2px}
+.ref-email{color:var(--g3);font-size:10px;margin-top:4px}
+
+/* ── MAIN ────────────────────────────────────────────────────── */
+.main{padding:26px 30px}
+
+/* Section heading */
+.sh{display:flex;align-items:center;gap:9px;margin-bottom:13px;margin-top:24px}
+.sh:first-child{margin-top:0}
+.sh-line{flex:1;height:1px;background:linear-gradient(to right,var(--teal-bdr),transparent)}
+.sh h2{font-size:20px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);white-space:nowrap}
+.sh-icon{width:24px;height:24px;border-radius:6px;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+
+/* Summary */
+.summary-box{background:var(--teal-bg);border-left:4px solid var(--teal);border-radius:0 var(--r) var(--r) 0;padding:14px 17px;font-size:13px;line-height:1.72;color:var(--g1)}
+
+/* Achievements */
+.ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ach-card{background:var(--g6);border:1px solid var(--g5);border-radius:var(--r);border-top:3px solid var(--teal);padding:11px 12px;transition:box-shadow .2s,transform .2s;cursor:default}
+.ach-card:nth-child(even){border-top-color:var(--navy2)}
+.ach-card:hover{box-shadow:var(--sh-md);transform:translateY(-2px)}
+.ach-metric{font-family:var(--serif);font-size:1.45rem;color:var(--navy2);line-height:1.1;margin-bottom:2px}
+.ach-label{font-size:12px;font-weight:700;color:var(--g1);margin-bottom:2px}
+.ach-desc{font-size:11px;color:var(--g2);line-height:1.45}
+
+/* Jobs */
+.job{position:relative;padding-left:17px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px dashed var(--g5)}
+.job:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+.job::before{content:'';position:absolute;left:0;top:4px;width:9px;height:9px;border-radius:50%;background:var(--teal);border:2px solid var(--white);box-shadow:0 0 0 2px var(--teal-bdr)}
+.job:not(:last-child)::after{content:'';position:absolute;left:4px;top:14px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--teal-bdr),transparent)}
+.job-hd{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:4px;margin-bottom:2px}
+.job-title{font-size:15px;font-weight:700;color:var(--navy2);line-height:1.25}
+.job-dates{background:var(--accent-bg);color:var(--accent);font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:12px;white-space:nowrap;flex-shrink:0}
+.job-co{font-size:13px;color:var(--teal);font-weight:600;margin-bottom:6px}
+.job-co .loc{font-weight:400;color:var(--g2);font-size:11px;}
+.job-sum{font-size:11.5px;color:var(--g2);font-style:italic;margin-bottom:7px;line-height:1.55;padding:5px 10px;background:var(--g6);border-radius:4px;border-left:2px solid var(--g4)}
+.job ul{list-style:none}
+.job ul li{position:relative;padding-left:13px;font-size:12px;line-height:1.6;color:var(black);margin-bottom:3px}
+.job ul li::before{content:'▸';position:absolute;left:0;top:1px;color:var(--teal);font-size:10px}
+
+/* Earlier */
+.earlier{background:var(--g6);border-left:3px solid var(--g4);border-radius:0 var(--r) var(--r) 0;padding:11px 14px;font-size:11.5px;color:var(--g2);line-height:1.6}
+
+/* ATS Keywords */
+.kw-wrap{display:flex;flex-wrap:wrap;gap:5px}
+.kw{background:var(--navy2);color:var(--white);font-size:10px;padding:3px 9px;border-radius:4px;font-weight:500}
+
+/* Footer */
+.footer{background:var(--navy);padding:12px 44px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer span,.footer a{font-size:11px;color:rgba(255,255,255,.55)}
+.footer a{text-decoration:none;color:rgba(255,255,255,.72)}
+
+/* Print */
+@media print{
+  body{background:white;font-size:11px}
+  .resume{box-shadow:none;margin:0;border-radius:0;max-width:100%}
+  .print-btn{display:none}
+  .ach-card:hover{transform:none;box-shadow:none}
+  .job{break-inside:avoid}
+  .layout{grid-template-columns:210px 1fr}
+  .header{padding:26px 30px 20px}
+  .main{padding:18px 22px}
+  .sidebar{padding:18px 12px}
+  @page{margin:8mm}
+}
+@media(max-width:760px){
+  .resume{margin:0;border-radius:0}
+  .layout{grid-template-columns:1fr}
+  .sidebar{border-right:none;border-bottom:1px solid var(--g5)}
+  .header{padding:24px 18px 20px}
+  .header-stats{flex-direction:row;flex-wrap:wrap}
+  .ach-grid{grid-template-columns:1fr 1fr}
+  .main{padding:18px}
+  .print-btn{display:none}
+}
+@media(max-width:480px){
+  .ach-grid{grid-template-columns:1fr}
+  .header-inner{flex-direction:column-reverse}
+  .photo-wrap{align-self:center}
+}
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 6 2 18 2 18 9"/>
+    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+    <rect x="6" y="14" width="12" height="8"/>
+  </svg>
+  Print / Save PDF
+</button>
+
+<div class="resume">
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-accent"></div>
+  <div class="header-inner">
+    <div style="display:flex;align-items:flex-start;gap:18px;flex:1;min-width:260px">
+      <div class="photo-wrap">
+        <img src="data:image/jpeg;base64,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" alt="Vijaydan Gadhavi"/>
+      </div>
+      <div class="header-left">
+        <h1 class="name">Vijaydan Gadhavi</h1>
+        <div class="title-badges">
+          <span class="title-badge">PMO Lead</span>
+          <span class="title-badge">AI Program/Project Manager</span>
+          <span class="title-badge">AI Transformation Leader</span>
+          <span class="title-badge">Digital Transformation Expert</span>
+        </div>
+        <p class="tagline">AI-Powered Enterprise PMO &nbsp;·&nbsp; GenAI &amp; MLOps &nbsp;·&nbsp; Agile / SAFe &nbsp;·&nbsp; Azure &amp; AWS &nbsp;·&nbsp; 20+ Years IT Leadership</p>
+        <div class="contact-grid">
+          <div class="contact-item"><span class="ci-icon">📍</span> Ahmedabad, Gujarat, India</div>
+          <div class="contact-item"><span class="ci-icon">📱</span> +91-98256 87300</div>
+          <div class="contact-item"><span class="ci-icon">✉</span> vijaydan.gadhavi@outlook.com</div>
+          <div class="contact-item"><span class="ci-icon">🔗</span><a class="contact-item-href" href="https://www.linkedin.com/in/vijaydan-gadhavi" target="_blank">https://www.linkedin.com/in/vijaydan-gadhavi↗</a></div>
+          <div class="contact-item"><span class="ci-icon">🏅</span> Gen AI Certified &nbsp;·&nbsp; PMP Trained</div>
+        </div>
+      </div>
+    </div>
+    <div class="header-stats">
+      <div class="stat-pill"><span class="stat-num">20+</span><span class="stat-lbl">Yrs Experience</span></div>
+      <div class="stat-pill"><span class="stat-num">40+</span><span class="stat-lbl">Team Led</span></div>
+      <div class="stat-pill" style="border-top:2px solid rgba(231,111,81,.45)"><span class="stat-num" style="color:#fdb99b">₹25 Cr+</span><span class="stat-lbl">Portfolio</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+  <div class="sb-sec">
+    <div class="sb-title">Core Competencies</div>
+    <div class="skill-grp">
+      <div class="skill-cat">AI &amp; GenAI Leadership</div>
+      <div class="tags">
+        <span class="tag tag-s">AI PMO Governance</span><span class="tag tag-s">GenAI Strategy</span>
+        <span class="tag tag-t">LLM Integration</span><span class="tag tag-t">MLOps Oversight</span>
+        <span class="tag tag-t">RAG Architecture</span><span class="tag tag-o">AI Lifecycle Mgmt</span>
+        <span class="tag tag-o">AI Risk &amp; Compliance</span>
+      </div>
+    </div>
+    <div class="skill-grp">
+      <div class="skill-cat">PMO &amp; Delivery</div>
+      <div class="tags">
+        <span class="tag tag-s">Portfolio Management</span><span class="tag tag-s">Program Governance</span>
+        <span class="tag tag-t">Agile / Scrum / SAFe</span><span class="tag tag-o">Kanban</span>
+        <span class="tag tag-o">Risk Management</span><span class="tag tag-o">Change Management</span>
+        <span class="tag tag-o">P&amp;L Ownership</span><span class="tag tag-o">SDLC Governance</span>
+      </div>
+    </div>
+    <div class="skill-grp">
+      <div class="skill-cat">Cloud Platforms</div>
+      <div class="tags">
+        <span class="tag tag-s">Microsoft Azure</span><span class="tag tag-s">AWS</span>
+        <span class="tag tag-t">Azure DevOps</span><span class="tag tag-t">Azure ML</span>
+        <span class="tag tag-o">AWS SageMaker</span><span class="tag tag-o">Microservices</span>
+        <span class="tag tag-o">REST APIs</span><span class="tag tag-o">CI/CD</span>
+      </div>
+    </div>
+    <div class="skill-grp">
+      <div class="skill-cat">Business Leadership</div>
+      <div class="tags">
+        <span class="tag tag-o">Stakeholder Mgmt</span><span class="tag tag-o">Executive Reporting</span>
+        <span class="tag tag-o">Vendor Management</span><span class="tag tag-t">Compliance HIPAA / GDPR</span>
+        <span class="tag tag-o">Budget Control</span>
+      </div>
+    </div>
+    <div class="skill-grp">
+      <div class="skill-cat">Tools &amp; Analytics</div>
+      <div class="tags">
+        <span class="tag tag-o">Jira</span><span class="tag tag-o">MS Project</span>
+        <span class="tag tag-o">Power BI</span><span class="tag tag-o">Tableau</span>
+        <span class="tag tag-o">Azure Boards</span><span class="tag tag-o">Jenkins</span>
+        <span class="tag tag-o">Zoho</span><span class="tag tag-o">Antigravity</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sb-sec">
+    <div class="sb-title">AI Platforms &amp; Tools</div>
+    <div class="ai-pills">
+      <span class="ai-pill">Azure OpenAI</span><span class="ai-pill">ChatGPT</span>
+      <span class="ai-pill">MS Copilot</span><span class="ai-pill">Claude</span>
+      <span class="ai-pill">Gemini</span><span class="ai-pill">LangChain</span>
+      <span class="ai-pill">Ollama</span><span class="ai-pill">n8n</span>
+      <span class="ai-pill">MLflow</span><span class="ai-pill">Kubeflow</span>
+      <span class="ai-pill">ChromaDB</span><span class="ai-pill">Pinecone</span>
+      <span class="ai-pill">RAG / OpenAI</span><span class="ai-pill">REST APIs</span>
+    </div>
+  </div>
+
+  <div class="sb-sec">
+    <div class="sb-title">Certifications</div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">PMP® – 35 PDU Training</div><div class="cert-iss">Project Management Institute</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">AI for Project Managers</a></div><div class="cert-iss"><a href="https://www.credly.com/badges/2fa9664e-45ff-4913-969c-b7d2af8d8fca">Credly Verifie · 2026 </a></div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Gen AI for Prompt Management (Advanced)</a></div><div class="cert-iss"><a href="https://www.credly.com/badges/8f0c4f8e-c341-4965-8f15-ad3ae7412808">Credly Verified · 2026</a></div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">J2EE Certified Developer</div><div class="cert-iss">Sun Microsystems</div></div></div>
+    <div class="cert-item"><div class="cert-dot p"></div><div><div class="cert-name">AI/ML &amp; Cloud Strategy</div><div class="cert-iss">Pursuing – Coursera / edX</div></div></div>
+  </div>
+
+  <div class="sb-sec">
+    <div class="sb-title">Education</div>
+    <div class="edu-it"><div class="edu-deg">M.Sc. Computer Applications &amp; IT</div><div class="edu-uni">Gujarat University</div><div class="edu-yr">2004–2006 · First Class (60%)</div></div>
+    <div class="edu-it"><div class="edu-deg">B.Sc. Computer Applications &amp; IT</div><div class="edu-uni">Gujarat University</div><div class="edu-yr">2002–2004</div></div>
+  </div>
+
+  <div class="sb-sec">
+    <div class="sb-title">Languages</div>
+    <div class="lang-row"><span class="lang-name">English</span><span class="lang-badge">Fluent</span></div>
+    <div class="lang-row"><span class="lang-name">Hindi</span><span class="lang-badge">Fluent</span></div>
+    <div class="lang-row"><span class="lang-name">Gujarati</span><span class="lang-badge">Native</span></div>
+  </div>
+
+  <div class="sb-sec">
+    <div class="sb-title">Reference</div>
+    <div class="ref-card">
+      <div class="ref-name">Vipul Shah</div>
+      <div class="ref-role">CEO – Ecubix Pvt. Ltd.</div>
+      <div class="ref-email">vipul.shah@smartepsilon.com</div>
+    </div>
+  </div>
+
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <div class="sh"><div class="sh-icon">💼</div><h2>Professional Summary</h2><div class="sh-line"></div></div>
+  <div class="summary-box">
+    <strong>AI PMO Lead and Project/Program/Delivery Manager with 20+ years of IT experience</strong>, including 10+ years in senior project and program leadership. Proven track record establishing <strong>Enterprise PMO governance frameworks</strong>, managing multi-million digital transformation portfolios, and leading cross-functional teams of <strong>40+ engineers, architects, and product stakeholders</strong> across Healthcare, Supply Chain, Logistics, and E-Commerce domains.<br/><br/>
+    Deep expertise in <strong>Generative AI, Azure OpenAI Service, RAG architecture, MLOps governance</strong>, and <strong>Agile/SAFe delivery</strong> on Azure and AWS. Delivered AI-enabled solutions achieving up to <strong>40% operational efficiency gains</strong>. PMP-trained with strong P&amp;L ownership, stakeholder management, vendor management, and enterprise compliance (HIPAA, GDPR) capabilities. Actively targeting <strong>PMO Lead, AI Program Manager, or Senior Delivery Manager</strong> roles at TCS, Wipro, Infosys, Capgemini, Accenture, or equivalent enterprises.
+  </div>
+
+  <div class="sh"><div class="sh-icon">🏆</div><h2>Key Achievements</h2><div class="sh-line"></div></div>
+  <div class="ach-grid">
+    <div class="ach-card"><div class="ach-metric">₹25 Cr+</div><div class="ach-label">Portfolio Managed</div><div class="ach-desc">AI &amp; Digital Transformation with full P&amp;L accountability</div></div>
+    <div class="ach-card"><div class="ach-metric">40%</div><div class="ach-label">Efficiency Gain</div><div class="ach-desc">AI-driven supply chain &amp; logistics operational improvement</div></div>
+    <div class="ach-card"><div class="ach-metric">20%</div><div class="ach-label">Delivery Boost</div><div class="ach-desc">Enterprise PMO governance framework implementation</div></div>
+    <div class="ach-card"><div class="ach-metric">25%</div><div class="ach-label">Diagnostic Accuracy</div><div class="ach-desc">AI-enabled healthcare ML integration</div></div>
+    <div class="ach-card"><div class="ach-metric">4×</div><div class="ach-label">System Scaled</div><div class="ach-desc">Healthcare platform: 200 → 800+ concurrent users</div></div>
+    <div class="ach-card"><div class="ach-metric">15%</div><div class="ach-label">Cost Reduction</div><div class="ach-desc">Vendor rationalisation &amp; procurement optimisation</div></div>
+  </div>
+
+  <div class="sh"><div class="sh-icon">🧭</div><h2>Professional Experience</h2><div class="sh-line"></div></div>
+
+  <div class="job">
+    <div class="job-hd"><div class="job-title">PMO Lead / AI Transformation Lead</div><span class="job-dates">Oct 2024 – Present</span></div>
+    <div class="job-co">Ecubix Pvt. Ltd. <span class="loc">| Ahmedabad, Gujarat, India</span></div>
+    <div class="job-sum">Leading enterprise AI PMO and digital transformation across supply chain, logistics, and industrial platforms. Managing INR 10 Cr+ portfolio with full governance, P&amp;L, and compliance accountability.</div>
+    <ul>
+      <li>Established <strong>Enterprise AI Governance Framework</strong> covering AI lifecycle, MLOps oversight, risk controls, and regulatory compliance (HIPAA, GDPR) — improved delivery predictability by 20%.</li>
+      <li>Led <strong>Enterprise PMO</strong> managing 5 concurrent programs; supervised 5 Project Managers across strategic clients: ONGC, Tata Power, NHPC, and BASF.</li>
+      <li>Spearheaded <strong>Agile/Scrum transformation</strong> — increased delivery efficiency by 20%, stakeholder satisfaction by 15%.</li>
+      <li>Delivered <strong>AI-enabled Track &amp; Trace System</strong> — improved tracking accuracy by 40%, reduced operational downtime by 20%.</li>
+      <li>Led <strong>Supply Chain AI Optimisation</strong> integrating AI analytics into inventory management, reducing inefficiencies by 15%.</li>
+      <li>Deployed <strong>Cloud-Based WMS</strong> on Azure — improved scalability and operational efficiency by 20%.</li>
+      <li>Achieved <strong>15% cost reduction</strong> through vendor strategy optimisation and contract negotiation.</li>
+      <li>Implemented <strong>DevOps pipelines</strong> (Azure Boards, Jira) for end-to-end SDLC visibility and continuous improvement.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-hd"><div class="job-title">Project Manager – Healthcare IT &amp; AI Integration</div><span class="job-dates">Jun 2020 – Aug 2024</span></div>
+    <div class="job-co">Advantmed India LLP <span class="loc">| Ahmedabad, Gujarat, India</span></div>
+    <div class="job-sum">Directed healthcare technology programs aligned with US client requirements, HIPAA compliance, and Agile delivery across TMS, ERP, HCC Coding, and AI Diagnostic platforms.</div>
+    <ul>
+      <li>Delivered <strong>TMS, ERP, HCC Coding, Abstraction &amp; PHA projects</strong> — reduced bug tickets by 30%, raised user satisfaction by 25%.</li>
+      <li>Led <strong>AI Diagnostic Integration</strong> — improved diagnostic accuracy by 25% and patient throughput by 40% via ML-based clinical decision support.</li>
+      <li>Scaled healthcare platform from <strong>200 to 800+ concurrent users</strong> through architecture optimisation.</li>
+      <li>Implemented <strong>Agile Scrum</strong> — reduced delivery cycle time by 20%, raised stakeholder satisfaction by 15%.</li>
+      <li>Ensured 100% <strong>HIPAA compliance</strong>; led QA, risk mitigation, and audit readiness programs.</li>
+      <li>Managed US healthcare client accounts; identified upsell opportunities worth <strong>USD 200K+</strong>.</li>
+      <li>Established team performance framework for 12+ team members: appraisals, training &amp; career development.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-hd"><div class="job-title">Project Manager – E-Commerce &amp; Logistics Platforms</div><span class="job-dates">Mar 2016 – May 2020</span></div>
+    <div class="job-co">Varologic Pvt. Ltd. <span class="loc">| Ahmedabad, Gujarat, India</span></div>
+    <ul>
+      <li>Delivered <strong>WMS, E-Commerce Platforms, Mobile Applications &amp; ERP Systems</strong> across 10+ concurrent client engagements.</li>
+      <li>Improved order fulfilment efficiency by 35% and operational efficiency by 30% through process re-engineering.</li>
+      <li>Drove UI/UX enhancements — 20% increase in site traffic and 5% revenue uplift.</li>
+      <li>Reduced project turnaround time by 25% through sprint-based delivery restructuring.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-hd"><div class="job-title">Project Manager</div><span class="job-dates">Dec 2015 – Feb 2016</span></div>
+    <div class="job-co">Magnaquest Pvt. Ltd. <span class="loc">| Hyderabad, Telangana, India</span></div>
+    <ul><li>Managed subscription management platform implementations; coordinated client requirements, release schedules, and QA processes ensuring SLA adherence.</li></ul>
+  </div>
+
+  <div class="job">
+    <div class="job-hd"><div class="job-title">Project Manager / IT Consultant</div><span class="job-dates">Sep 2014 – Aug 2015</span></div>
+    <div class="job-co">Roars Pvt. Ltd. <span class="loc">| Ahmedabad, Gujarat, India</span></div>
+    <ul><li>Provided PM consultancy for web and enterprise applications; improved delivery predictability through structured governance and tracking mechanisms.</li></ul>
+  </div>
+
+  <div class="job">
+    <div class="job-hd"><div class="job-title">Senior Project Manager</div><span class="job-dates">May 2013 – Sep 2014</span></div>
+    <div class="job-co">Elsner Technology Pvt. Ltd. <span class="loc">| Ahmedabad, Gujarat, India</span></div>
+    <ul><li>Led Magento-based enterprise e-commerce implementations; directed cross-functional dev and QA teams, improving delivery timelines and client satisfaction.</li></ul>
+  </div>
+
+  <div class="job">
+    <div class="job-hd"><div class="job-title">Project Coordinator</div><span class="job-dates">Jun 2012 – Apr 2013</span></div>
+    <div class="job-co">Krish Technolab Pvt. Ltd. <span class="loc">| Ahmedabad, Gujarat, India</span></div>
+    <ul><li>Coordinated e-commerce project deliveries; facilitated client communication, sprint planning, documentation, and release tracking.</li></ul>
+  </div>
+
+  <div class="job">
+    <div class="job-hd"><div class="job-title">Project Leader</div><span class="job-dates">Jun 2008 – May 2012</span></div>
+    <div class="job-co">Silver Touch Technologies Ltd. (CMMI-5) <span class="loc">| Ahmedabad, Gujarat, India</span></div>
+    <ul><li>Led Magento e-commerce projects; mentored development teams and ensured CMMI-5 quality process adherence and documentation standards.</li></ul>
+  </div>
+
+  <div class="sh" style="margin-top:16px"><div class="sh-icon">💡</div><h2>Earlier Career</h2><div class="sh-line"></div></div>
+  <div class="earlier">
+    <strong>Software Developer &amp; Technical Lead (2005–2010)</strong><br/>
+    Silver Touch Technologies · Cybercom Creation · Jeenec Technology · Perception System<br/>
+    Progressive roles from Software Developer to Technical Lead across .NET, PHP, and Java platforms — enterprise application development, team leadership, and CMMI-driven delivery excellence.
+  </div>
+
+  <div class="sh" style="margin-top:20px"><div class="sh-icon">🔑</div><h2> Domain Expertise</h2><div class="sh-line"></div></div>
+  <div class="kw-wrap">
+    <span class="kw">AI PMO Lead</span><span class="kw">AI Program Manager</span><span class="kw">Delivery Manager</span>
+    <span class="kw">Digital Transformation</span><span class="kw">Enterprise PMO</span><span class="kw">Portfolio Management</span>
+    <span class="kw">Agile</span><span class="kw">Scrum</span><span class="kw">SAFe</span><span class="kw">Kanban</span>
+    <span class="kw">Azure OpenAI</span><span class="kw">Generative AI</span><span class="kw">LLM</span><span class="kw">RAG</span>
+    <span class="kw">MLOps</span><span class="kw">AI Governance</span><span class="kw">Risk Management</span>
+    <span class="kw">Change Management</span><span class="kw">Stakeholder Management</span>
+    <span class="kw">HIPAA Compliance</span><span class="kw">GDPR</span><span class="kw">P&amp;L Management</span>
+    <span class="kw">Vendor Management</span><span class="kw">PMP</span><span class="kw">SDLC</span>
+    <span class="kw">CI/CD</span><span class="kw">DevOps</span><span class="kw">Power BI</span>
+    <span class="kw">Jira</span><span class="kw">Microsoft Azure</span><span class="kw">AWS</span>
+    <span class="kw">Healthcare IT</span><span class="kw">Supply Chain</span><span class="kw">Logistics</span>
+    <span class="kw">E-Commerce</span><span class="kw">ERP</span><span class="kw">WMS</span>
+    <span class="kw">AI Transformation</span><span class="kw">Program Governance</span><span class="kw">Executive Reporting</span>
+  </div>
+
+</main>
+</div><!-- /layout -->
+
+<footer class="footer">
+  <span>Vijaydan Gadhavi &nbsp;·&nbsp; viju.itprofessional@gmail.com &nbsp;·&nbsp; +91-98256 87300</span>
+  <span>PMP® Trained &nbsp;|&nbsp; Gen AI Certified &nbsp;|&nbsp; 20+ Years IT Leadership</span>
+  <a href="https://www.linkedin.com/in/vijaydan-gadhavi" target="_blank">https://www.linkedin.com/in/vijaydan-gadhavi↗</a>
+</footer>
+
+</div><!-- /resume -->
+</body>
+</html>
